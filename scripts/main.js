@@ -21,25 +21,29 @@ const translations = {
         bikeListButton: "Go to Bike List",
         applicationButton: "Go to Application",
         noBikesMessage: 'Bicycles are currently not available',
-        applyButton: 'Send application'
+        applyButton: 'Send application',
+        rentalText: 'Rental'
     },
     pl: {
         bikeListButton: "Przejdź do listy rowerów",
         applicationButton: "Przejdź do wniosku",
         noBikesMessage: 'Obecnie rowery nie są dostępne',
-        applyButton: 'Złożyć wniosek'
+        applyButton: 'Złożyć wniosek',
+        rentalText: 'Cena'
     },
     ua: {
         bikeListButton: "Перейти до списку велосипедів",
         applicationButton: "Перейти до заявки",
         noBikesMessage:'Велосипеди зараз недоступні',
-        applyButton: 'Подати заявку'
+        applyButton: 'Подати заявку',
+        rentalText: 'Цiна'
     },
     ru: {
         bikeListButton: "Перейти к списку велосипедов",
         applicationButton: "Перейти к заявлению",
         noBikesMessage: 'Велосипеды в данный момент недоступны',
-        applyButton: 'Подать заявку'
+        applyButton: 'Подать заявку',
+        rentalText: 'Цена'
     }
 };
 
@@ -112,7 +116,7 @@ function displayBikes() {
                 </div>
                 <div class="bike-info">
                     <h2>${bikeName}</h2>
-                    <p>Rental: ${bike.rental}</p>
+                    <p>${translations[lang].rentalText}: ${bike.rental}</p>
                     <p>${bikeComment}</p>
                     <button class="apply-button">${applyButton}</button>
                     <select class="city-dropdown">
