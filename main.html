@@ -2,31 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rent-a-bike Rental System</title>
+    <title>Bicycle Rental System</title>
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="icon" href="./media/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./media/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<header class="toolbar">
+    <h1 id="title">Rent-a-Bike</h1>
+    <nav>
+        <button id="to-bike-list-btn">Go to Bike List</button>
+        <button id="to-application-btn">Go to Application</button>
+        <select id="language-dropdown">
+            <option value="en">EN</option>
+            <option value="pl">PL</option>
+            <option value="ua">UA</option>
+            <option value="ru">RU</option>
+        </select>
+    </nav>
+</header>
 
-<div class="toolbar-block">
-    <span id="toolbar-title">Rent-a-Bike</span>
-    <button id="to-bike-list-btn">Go to Bike List</button>
-    <button id="to-application-btn">Go to Application</button>
-    <select id="language-dropdown">
-        <option value="en">EN</option>
-        <option value="pl">PL</option>
-        <option value="ua">UA</option>
-        <option value="ru">RU</option>
-    </select>
-</div>
+<div class="toolbar-placeholder"></div>
 
-
-<!-- Bike List Block -->
 <div id="bike-list-block">
 </div>
 
-
-<!-- Send Application Block -->
-<div id="send-application-block" class="hidden">
+<div id="send-application-block">
 </div>
 
 <script src="./scripts/main.js"></script>
