@@ -53,7 +53,7 @@ function scrollToBikesListBlock() {
 
 function setRandomBackgroundImage() {
     let randomNumber = Math.floor(Math.random() * 7) + 1;
-    let imagePath = './media/cover-image' + randomNumber + '.png';
+    let imagePath = './web-ui/media/cover-image' + randomNumber + '.png';
     document.body.style.backgroundImage = 'url("' + imagePath + '")';
 }
 
