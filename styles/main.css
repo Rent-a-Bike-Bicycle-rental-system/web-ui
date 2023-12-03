@@ -1,127 +1,341 @@
 body {
-    padding-top: 70px;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
-.hidden {
-    display: none;
+body::-webkit-scrollbar {
+    width: 5px;
 }
 
-.toolbar-block {
+body::-webkit-scrollbar-track {
+    background: #3d4955;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #5b727e;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #869ab3;
+}
+
+.toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-image: linear-gradient(to left, #fff2e6, #ffb366);
+    background: linear-gradient(to right, #23395d, #0a2342);
+    color: white;
     position: fixed;
     top: 0;
     width: 100%;
-    opacity: 0.9;
     z-index: 1000;
+    opacity: 0.95;
 }
 
-#toolbar-title {
-    font-family: 'Lato', sans-serif;
-    font-size: 24px;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+#title {
+    font-size: 2em;
 }
 
-#to-application-btn, #to-bike-list-btn, .apply-button, .city-dropdown {
+button {
     margin: 0 10px;
-    width: 200px;
-    height: 50px;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: transparent;
+    padding: 10px 20px;
+    background-color: #3a506b;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-
-    font-family: 'Lato', sans-serif;
-    font-size: 19px;
+    transition: background-color 0.3s;
 }
 
-#to-application-btn:hover, #to-bike-list-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: #000000;
+button:hover {
+    background-color: #1c2541;
 }
 
-#language-dropdown {
-    margin: 0 30px 0 10px;
-    border: 2px solid black;
-    border-radius: 10px;
+select {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.toolbar select {
+    margin: 0 30px;
+}
+
+.bike-announcement select {
+    margin: 0 10px;
+}
+
+.toolbar-placeholder {
+    padding-top: 750px;
+}
+
+.bike-list-block {
+    position: relative;
     background-color: transparent;
-
-    font-family: 'Lato', sans-serif;
-    font-size: 19px;
-}
-
-.no-bikes {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    width: 100%;
-    background-color: rgba(255, 165, 0, 0.5);
-    border: 5px solid #00BFFF;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    overflow: hidden;
 }
 
 .bike-announcement {
     display: flex;
-    width: 100%;
-    background-color: rgba(255, 165, 0, 0.5);
-    border: 5px solid #00BFFF;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    background: rgba(211, 211, 211, 0.85);
+    box-shadow: 0 2px 5px rgba(0,0,0,1);
+    overflow: hidden;
+    border-radius: 15px;
+    height: 20vh;
+    width: 80%;
+    margin: 1.66667vh auto;
 }
 
 .bike-photos {
-    width: 100%;
-    float: left;
+    display: flex;
+    flex: 0 0 20%;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    width: 20%;
+    height: 100%;
 }
 
 .bike-photo {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
-}
-
-.bike-info {
-    width: 100%;
-    float: left;
-    padding: 10px;
+    border-radius: 5px;
 }
 
 #prev, #next {
     position: absolute;
-    height: 100%;
-    width: auto;
     top: 0;
+    bottom: 0;
+    width: 5px;
     background-color: transparent;
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    opacity: 0.7;
-    transition: background-color 0.3s, opacity 0.3s;
-    z-index: 10;
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    padding: 0 10px;
-}
-
-#prev {
-    left: 0;
-}
-
-#next {
-    right: 0;
 }
 
 #prev:hover, #next:hover {
-    background-color: rgba(128, 128, 128, 0.5);
-    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#prev { left: -4.5%; }
+#next { right: -4.5%; }
+
+
+
+.bike-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0 1rem;
+    width: 80%;
+}
+
+.bike-name {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.rental-price {
+    font-weight: bold;
+}
+
+.bike-comment {
+    flex-grow: 1;
+}
+
+.control {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-top: 0;
+    flex: 0 0 20%;
+    padding: 10px;
+}
+
+.apply-button {
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.city-dropdown {
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.no-bikes {
+    color: #ffffff;
+    background-color: #d32f2f;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+}
+
+#send-application-block {
+    display: flex;
+    flex-direction: column;
+    background: #0a2342;
+    align-items: center;
+    padding: 20px 0;
+}
+
+#applicationForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    margin: 1.66667vh auto;
+}
+
+#send-application-block .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#send-application-block .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fdfdfd;
+}
+
+#send-application-block .form-group input,
+#send-application-block .form-group textarea {
+    width: calc(100% - 21px);
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #495057;
+}
+
+#send-application-block .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    color: #495057;
+    font-size: 16px;
+}
+
+#send-application-block .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#send-application-block button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+#send-application-block button[type="submit"]:hover,
+#send-application-block button[type="submit"]:focus {
+    background-color: #0056b3;
+}
+
+#send-application-block .alert {
+    padding: 50px 200px;
+    margin-top: 15px;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#send-application-block .alert-success {
+    background-color: #28a745;
+}
+
+#send-application-block .alert-danger {
+    background-color: #dc3545;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(100%);
+    }
+}
+
+@keyframes slideDownApplication {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 40%, 70%, 90% {
+        transform: translateX(3px);
+    }
+    25%, 55%, 82% {
+        transform: translateX(-3px);
+    }
+}
+
+.error-shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.error-message {
+    color: #d9534f;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
 }
