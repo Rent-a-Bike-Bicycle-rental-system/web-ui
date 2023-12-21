@@ -20,6 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 0.9;
 
     position: absolute;
     top: 50%;
@@ -73,4 +74,56 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.alert {
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #dc3545;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.alert slideUp {
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+.alert slideDown {
+    animation-name: slideDown;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateX(-50%) translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(100%);
+    }
 }

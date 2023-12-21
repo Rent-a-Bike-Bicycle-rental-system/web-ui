@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    setRandomBackgroundImage();
+});
+
+function setRandomBackgroundImage() {
+    let randomNumber = Math.floor(Math.random() * 7) + 1;
+    let imagePath = './media/cover-image' + randomNumber + '.png';
+    document.body.style.backgroundImage = 'url("' + imagePath + '")';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
     let signInButton = document.querySelector('.sign-in-button');
 
     signInButton.addEventListener('click', function() {
@@ -7,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!login || !password) {
             console.log("Login or password field is empty")
-            checkCookie();
+            showAlert("Login or password field is empty", ["slide-up", "slide-down"]);
             return;
         }
 
@@ -18,9 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 let token = xhr.responseText;
                 document.cookie = "sessionToken=" + token + "; path=/";
-                window.location.href = './../admin.html'; // Укажите URL следующей страницы
+                window.location.href = './../admin.html';
             } else if (xhr.readyState === 4) {
                 console.log("Login failed")
+
+                showAlert("Login failed", ["slide-up", "slide-down"]);
+                // here
             }
         };
         xhr.send(JSON.stringify({login: login, password: password}));
@@ -48,4 +61,25 @@ function checkCookie() {
     } else {
         console.log("No session token found");
     }
+}
+
+function showAlert(message, animations) {
+    const alertElement = document.querySelector('.alert');
+
+    // Set the message text
+    alertElement.textContent = message;
+
+    // Remove any previous animation classes
+    alertElement.classList.remove(...animations);
+
+    // Show the alert
+    alertElement.style.display = 'block';
+
+    // Apply the specified animations
+    alertElement.classList.add(...animations);
+
+    // Hide the alert after a delay (you can adjust the delay as needed)
+    setTimeout(() => {
+        alertElement.style.display = 'none';
+    }, 3000); // 3000 milliseconds (3 seconds) in this example
 }
